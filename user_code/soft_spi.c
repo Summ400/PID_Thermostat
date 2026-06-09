@@ -22,7 +22,7 @@ void soft_spi_cs_high(void)
     CS_HIGH();
 }
 
-uint8_t soft_spi_read_byte(void)
+uint8_t spi_read_byte(void)
 {
     uint8_t data = 0;
     uint8_t i;

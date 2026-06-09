@@ -139,9 +139,9 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	float current_temp;
+	float cur_temp;
 	uint8_t tc_ok;
-	temp_read_all(&current_temp, &tc_ok);
+	temp_read_all(&cur_temp, &tc_ok);
 	
 	int16_t delta = enc_get_delta();
 	if (delta != 0)
@@ -164,9 +164,9 @@ int main(void)
 		printf("BTN LONG PRESS\r\n");
 	}
 
-	if (heater_is_safe(current_temp, tc_ok))
+	if (heater_is_safe(cur_temp, tc_ok))
 	{
-		int32_t duty = pid_compute(&heater_pid, current_temp);
+		int32_t duty = pid_compute(&heater_pid, cur_temp);
 		heater_set_duty((uint16_t)duty);
 		printf("PID OUT: %d / 65535\r\n", (int)duty);
 	}
@@ -175,14 +175,14 @@ int main(void)
 		heater_off();
 		pid_reset(&heater_pid);	
 		printf("HEATER OFF (TC:%s Temp:%.1f)\r\n",
-			   tc_ok ? "OK" : "OPEN!", current_temp);
+			   tc_ok ? "OK" : "OPEN!", cur_temp);
 	}
 	
 	printf("Temp: %.1f C | Target: %.1f C | TC: %s\r\n",
-		   current_temp, target_temp,
+		   cur_temp, target_temp,
 		   tc_ok ? "OK" : "OPEN!");
 
-	oled_show_number(48, 0, current_temp, 1);
+	oled_show_number(48, 0, cur_temp, 1);
 	oled_show_number(48, 1, target_temp, 1);
 	
 	HAL_Delay(500);

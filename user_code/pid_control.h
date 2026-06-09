@@ -9,9 +9,9 @@ typedef struct {
     float ki;
     float kd;
 	
-    float setpoint;       //目标值
-    float last_error;     //上一次误差 e(k-1)
-    float prev_error;     //上上次误差 e(k-2)
+    float sp;             //目标值
+    float last_err;       //上一次误差 e(k-1)
+    float prev_err;       //上上次误差 e(k-2)
 
     int32_t output;       //当前输出值
     int32_t out_min;      
