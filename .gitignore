@@ -1,0 +1,23 @@
+# Keil编译产物
+*.o
+*.d
+*.crf
+*.axf
+*.lnp
+*.map
+*.dep
+*.lst
+
+# Keil用户配置（含本地路径）
+*.uvguix*
+
+# Hex/二进制
+*.hex
+*.bin
+
+# CubeMX备份
+.mxproject
+
+# Excel/PDF（二进制大文件）
+docs/*.xls
+docs/*.pdf
