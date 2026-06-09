@@ -3,7 +3,7 @@
 <title>Static Call Graph - [PID_Thermostat\PID_Thermostat.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image PID_Thermostat\PID_Thermostat.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Jun 07 17:16:37 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Jun 09 22:25:43 2026
 <BR><P>
 <H3>Maximum Stack Usage =        208 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -428,14 +428,14 @@ Global Symbols
 <P><STRONG><a name="[84]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f0xx_hal_gpio.o(i.HAL_GPIO_ReadPin))
 <BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enc_timer_tick
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;enc_exti_callback
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;soft_spi_read_byte
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spi_read_byte
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_write_byte
 </UL>
 
 <P><STRONG><a name="[72]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f0xx_hal_gpio.o(i.HAL_GPIO_WritePin))
 <BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_init
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;soft_spi_read_byte
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spi_read_byte
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;soft_spi_init
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;soft_spi_cs_low
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;soft_spi_cs_high
@@ -999,7 +999,7 @@ Global Symbols
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oled_write_cmd
 </UL>
 
-<P><STRONG><a name="[1a]"></a>main</STRONG> (Thumb, 414 bytes, Stack size 24 bytes, main.o(i.main))
+<P><STRONG><a name="[1a]"></a>main</STRONG> (Thumb, 412 bytes, Stack size 24 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = main &rArr; SystemClock_Config &rArr; HAL_RCC_ClockConfig &rArr; HAL_RCC_GetSysClockFreq &rArr; __aeabi_uldivmod &rArr; __aeabi_llsr
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;temp_read_all
@@ -1130,8 +1130,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;temp_init
 </UL>
 
-<P><STRONG><a name="[a9]"></a>soft_spi_read_byte</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, soft_spi.o(i.soft_spi_read_byte))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = soft_spi_read_byte
+<P><STRONG><a name="[a9]"></a>spi_read_byte</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, soft_spi.o(i.spi_read_byte))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = spi_read_byte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
@@ -1148,10 +1148,10 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[94]"></a>temp_read_all</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, temp_reader.o(i.temp_read_all))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = temp_read_all &rArr; soft_spi_read_byte
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = temp_read_all &rArr; spi_read_byte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_scalbnf
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;soft_spi_read_byte
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spi_read_byte
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;soft_spi_cs_low
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;soft_spi_cs_high
 <LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
